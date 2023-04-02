@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM jlesage/baseimage-gui:ubuntu-20.04
 
 MAINTAINER KallyDev kallydev@gmail.com
 
@@ -6,11 +6,11 @@ RUN apt update && apt install -y git python libsodium-dev
 
 RUN git clone -b manyuser https://github.com/shadowsocksr-backup/shadowsocksr
 
-ENV SSR_PORT="443" \
-    SSR_PASSWORD="2fsY81vL" \
-    SSR_METHOD="chacha20-ietf" \
+ENV SSR_PORT="9001" \
+    SSR_PASSWORD="9787543754" \
+    SSR_METHOD="aes-256-cfb" \
     SSR_PROTOCOL="origin" \
-    SSR_OBFS="http_simple"
+    SSR_OBFS="plain"
 
 EXPOSE $SSR_PORT
 
